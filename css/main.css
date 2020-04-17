@@ -62,7 +62,7 @@
 .wrapper {
 	width: 80%;
 	margin: 0 auto;
-	background-color: gray;
+	background-color: darkslategray;
 }
 
 .row:after {
@@ -76,13 +76,16 @@
 }
 
 [class*="col-"]{
-	height: 50px;
+	height: 150px;
 	background-color: aqua;
 	float: left;
 	padding: 0 10px; /*creates gutters*/
 	margin-bottom: 20px; /*space below*/
-	background-clip: content-box;
-	
+	-webkit-background-clip: content-box;
+	-moz-background-clip: content-box;
+	-ms-background-clip: content-box;
+	-o-background-clip: content-box;
+	background-clip: content-box;	
 }
 
 .col-sm-1 {
@@ -246,18 +249,22 @@
 6.0 - Componets 
 -------------------------------------------------------------- */
  
-#bg-smiley { /*    */
-	background-image: url("../img/smiley-face2x.png");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-origin: content-box;
+.img-responsive {
+	max-width: 100%;
 }
 
-.houses-img {
-	background-image: url("../img/houses-street2x.jpg");
+#bg-smiley {
+	background-image: url("../img/smiley-face.png"); 
+	background-size: cover; 
+	background-repeat: no-repeat; 
+	background-clip: content-box;
+}
+
+#houses-img { /* padding clipped */
+	background-image: url("../img/houses-street@2x.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-origin: content-box;
+	background-clip: padding-box;
 }
 
 
@@ -265,6 +272,13 @@
 7.0 - Utilities 
 -------------------------------------------------------------- */
  
- 
- 
+ /*
+
+-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing: border-box;
+
+*/
 
